@@ -1,27 +1,27 @@
 :root {
-  color-scheme: dark;
-  --background: #07100d;
-  --foreground: #ecf6f0;
-  --muted: #80918a;
-  --muted-foreground: #a7b5ae;
-  --card: #0d1814;
-  --card-strong: #12221c;
-  --border: rgba(196, 222, 210, 0.14);
-  --input: rgba(196, 222, 210, 0.16);
-  --primary: #76e4b7;
-  --primary-foreground: #06120d;
-  --secondary: #173027;
-  --accent: #c9a35d;
-  --ok: #58d68d;
-  --ok-soft: rgba(88, 214, 141, 0.16);
-  --warning: #f2c85b;
-  --warning-soft: rgba(242, 200, 91, 0.16);
-  --critical: #ff6b5f;
-  --critical-soft: rgba(255, 107, 95, 0.18);
-  --info: #7fb7ff;
-  --info-soft: rgba(127, 183, 255, 0.14);
+  color-scheme: light;
+  --background: hsl(0 0% 96%);
+  --foreground: hsl(0 0% 9%);
+  --muted: hsl(0 0% 93%);
+  --muted-foreground: hsl(0 0% 46%);
+  --card: hsl(0 0% 100%);
+  --card-strong: hsl(0 0% 98%);
+  --border: hsl(0 0% 88%);
+  --input: hsl(0 0% 88%);
+  --primary: hsl(0 0% 9%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(0 0% 93%);
+  --accent: hsl(0 0% 91%);
+  --ok: hsl(142 55% 38%);
+  --ok-soft: hsl(142 55% 38% / 0.10);
+  --warning: hsl(38 85% 40%);
+  --warning-soft: hsl(38 85% 40% / 0.10);
+  --critical: hsl(0 68% 48%);
+  --critical-soft: hsl(0 68% 48% / 0.10);
+  --info: hsl(215 70% 50%);
+  --info-soft: hsl(215 70% 50% / 0.10);
   --radius: 8px;
-  --shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
@@ -36,10 +36,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, rgba(9, 28, 21, 0.95), rgba(6, 14, 12, 0.98)),
-    radial-gradient(circle at 20% 10%, rgba(118, 228, 183, 0.12), transparent 26%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
 }
 
@@ -77,7 +74,7 @@ button {
 
 .eyebrow {
   margin: 0;
-  color: var(--primary);
+  color: var(--muted-foreground);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -117,7 +114,7 @@ button {
 .ui-alert {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(18, 34, 28, 0.88), rgba(10, 19, 16, 0.92));
+  background: var(--card);
   box-shadow: var(--shadow);
 }
 
@@ -167,10 +164,8 @@ button {
 }
 
 .ui-alert-critical {
-  border-color: rgba(255, 107, 95, 0.36);
-  background:
-    linear-gradient(135deg, rgba(255, 107, 95, 0.17), rgba(10, 19, 16, 0.92) 48%),
-    var(--card);
+  border-color: hsl(0 68% 58% / 0.28);
+  background: var(--card);
 }
 
 .ui-alert-title {
@@ -183,7 +178,7 @@ button {
 .ui-alert-description {
   margin: 10px 0 0;
   max-width: 700px;
-  color: #d8e5de;
+  color: var(--muted-foreground);
   font-size: 15px;
   line-height: 1.45;
 }
@@ -213,7 +208,7 @@ button {
 
 .ui-badge-default,
 .ui-badge-muted {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--muted);
   color: var(--muted-foreground);
   border-color: var(--border);
 }
@@ -226,20 +221,20 @@ button {
 
 .ui-badge-ok {
   background: var(--ok-soft);
-  color: #a9f4c6;
-  border-color: rgba(88, 214, 141, 0.3);
+  color: var(--ok);
+  border-color: hsl(142 55% 52% / 0.30);
 }
 
 .ui-badge-warning {
   background: var(--warning-soft);
-  color: #ffe09b;
-  border-color: rgba(242, 200, 91, 0.32);
+  color: var(--warning);
+  border-color: hsl(38 80% 58% / 0.32);
 }
 
 .ui-badge-critical {
   background: var(--critical-soft);
-  color: #ffb0aa;
-  border-color: rgba(255, 107, 95, 0.34);
+  color: var(--critical);
+  border-color: hsl(0 68% 58% / 0.34);
 }
 
 .ui-button {
@@ -264,7 +259,7 @@ button {
 }
 
 .ui-button-ghost:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--muted);
   color: var(--foreground);
 }
 
@@ -298,17 +293,15 @@ button {
 }
 
 .stat-value {
-  font-size: clamp(23px, 2vw, 34px);
+  font-size: clamp(26px, 2.2vw, 38px);
   font-weight: 800;
   line-height: 1;
+  color: var(--foreground);
 }
 
-.severity-critical {
-  border-color: rgba(255, 107, 95, 0.26);
-}
-
+.severity-critical,
 .severity-warning {
-  border-color: rgba(242, 200, 91, 0.24);
+  /* severity communicated through metric value color; border is neutral */
 }
 
 .gauge-wrap {
@@ -341,7 +334,7 @@ button {
 }
 
 .gauge-track {
-  stroke: rgba(255, 255, 255, 0.08);
+  stroke: rgba(0, 0, 0, 0.12);
 }
 
 .gauge-ok {
@@ -391,7 +384,7 @@ button {
   min-width: 0;
   border: 1px solid var(--border);
   border-radius: 7px;
-  background: rgba(5, 12, 10, 0.42);
+  background: hsl(0 0% 94%);
   padding: 12px;
 }
 
@@ -422,12 +415,12 @@ button {
 }
 
 .chart-grid-lines line {
-  stroke: rgba(196, 222, 210, 0.1);
+  stroke: hsl(0 0% 85%);
   stroke-width: 1;
 }
 
 .change-band {
-  fill: rgba(127, 183, 255, 0.12);
+  fill: hsl(0 0% 20% / 0.4);
 }
 
 .focus-band {
@@ -453,13 +446,13 @@ button {
 .threshold-danger line,
 .threshold-danger text {
   stroke: rgba(255, 107, 95, 0.72);
-  fill: #ffb0aa;
+  fill: var(--critical);
 }
 
 .threshold-target line,
 .threshold-target text {
-  stroke: rgba(118, 228, 183, 0.65);
-  fill: #a9f4c6;
+  stroke: hsl(142 55% 52% / 0.65);
+  fill: var(--ok);
 }
 
 .chart-line {
@@ -470,24 +463,24 @@ button {
 }
 
 .cell-line-0 {
-  stroke: #ff7168;
+  stroke: var(--critical);
 }
 
 .cell-line-1 {
-  stroke: #f2c85b;
+  stroke: var(--warning);
 }
 
 .cell-line-2 {
-  stroke: #7fb7ff;
+  stroke: var(--info);
 }
 
 .cell-line-muted {
-  stroke: rgba(167, 181, 174, 0.32);
+  stroke: rgba(0, 0, 0, 0.14);
   stroke-width: 1.5;
 }
 
 .throughput-line {
-  stroke: var(--primary);
+  stroke: var(--info);
 }
 
 .drop-line {
@@ -527,19 +520,19 @@ button {
 }
 
 .cell-legend-0::before {
-  background: #ff7168;
+  background: var(--critical);
 }
 
 .cell-legend-1::before {
-  background: #f2c85b;
+  background: var(--warning);
 }
 
 .cell-legend-2::before {
-  background: #7fb7ff;
+  background: var(--info);
 }
 
 .throughput-dot::before {
-  background: var(--primary);
+  background: var(--info);
 }
 
 .drop-dot::before {
@@ -561,7 +554,7 @@ button {
   display: inline-flex;
   border: 1px solid var(--border);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--secondary);
   padding: 3px;
 }
 
@@ -578,8 +571,8 @@ button {
 }
 
 .ui-toggle-item.is-selected {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: hsl(0 0% 16%);
+  color: var(--foreground);
 }
 
 .map-layout {
@@ -592,46 +585,46 @@ button {
   width: 100%;
   min-height: 340px;
   border-radius: 7px;
-  background: #09120f;
+  background: var(--background);
 }
 
 .district-base {
-  fill: #0e1e18;
-  stroke: rgba(196, 222, 210, 0.12);
+  fill: hsl(0 0% 92%);
+  stroke: hsl(0 0% 78%);
 }
 
 .district-streets {
-  stroke: rgba(196, 222, 210, 0.12);
+  stroke: hsl(0 0% 82%);
   stroke-width: 1;
 }
 
 .sector-fill {
-  stroke: rgba(236, 246, 240, 0.42);
+  stroke: hsl(0 0% 20% / 0.4);
   stroke-width: 0.6;
   transition: fill 160ms ease, stroke 160ms ease;
 }
 
 .map-sector text {
-  fill: #ecf6f0;
+  fill: var(--foreground);
   font-size: 4px;
   font-weight: 800;
 }
 
 .sector-dot {
-  fill: #ecf6f0;
-  stroke: #07100d;
+  fill: var(--foreground);
+  stroke: var(--background);
   stroke-width: 0.6;
 }
 
 .map-sector.is-focused .sector-fill {
-  stroke: #ffffff;
+  stroke: #000000;
   stroke-width: 1.8;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35));
 }
 
 .enterprise-marker rect {
-  fill: #ffffff;
-  stroke: #07100d;
+  fill: var(--foreground);
+  stroke: var(--background);
   stroke-width: 0.5;
 }
 
@@ -663,7 +656,7 @@ button {
 .heat-legend {
   border: 1px solid var(--border);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--secondary);
   padding: 12px;
 }
 
@@ -701,18 +694,18 @@ button {
   width: 30px;
   height: 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .topology-svg {
   width: 100%;
   min-height: 340px;
   border-radius: 7px;
-  background: rgba(5, 12, 10, 0.42);
+  background: hsl(0 0% 94%);
 }
 
 .topology-edge {
-  stroke: rgba(167, 181, 174, 0.36);
+  stroke: rgba(0, 0, 0, 0.22);
   stroke-linecap: round;
 }
 
@@ -730,13 +723,13 @@ button {
 }
 
 .topology-edge.is-focused {
-  stroke: #ffffff;
-  filter: drop-shadow(0 0 5px rgba(255, 107, 95, 0.8));
+  stroke: hsl(0 0% 20%);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
 }
 
 .topology-node circle,
 .topology-node rect {
-  stroke: rgba(255, 255, 255, 0.72);
+  stroke: rgba(0, 0, 0, 0.25);
   stroke-width: 0.9;
 }
 
@@ -757,9 +750,9 @@ button {
 
 .topology-node.is-focused circle,
 .topology-node.is-focused rect {
-  stroke: #ffffff;
+  stroke: hsl(0 0% 10%);
   stroke-width: 2;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.65));
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
 }
 
 .topology-node text {
@@ -792,7 +785,7 @@ button {
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.035);
+  background: var(--card);
   padding: 10px;
   text-align: left;
   cursor: pointer;
@@ -800,8 +793,8 @@ button {
 
 .alert-item:hover,
 .alert-item.is-selected {
-  border-color: rgba(118, 228, 183, 0.48);
-  background: rgba(118, 228, 183, 0.08);
+  border-color: hsl(0 0% 78%);
+  background: hsl(0 0% 95%);
 }
 
 .alert-item p {
@@ -849,13 +842,13 @@ button {
 }
 
 .ui-table-cell {
-  color: #dbe8e1;
+  color: var(--foreground);
   font-size: 13px;
 }
 
 .ui-table-row.is-focused-row {
-  background: rgba(118, 228, 183, 0.08);
-  outline: 1px solid rgba(118, 228, 183, 0.34);
+  background: hsl(0 0% 94%);
+  outline: 1px solid hsl(0 0% 82%);
 }
 
 .metric-cell {
@@ -864,18 +857,18 @@ button {
 }
 
 .metric-cell.ok {
-  background: rgba(88, 214, 141, 0.08);
-  color: #a9f4c6;
+  background: var(--ok-soft);
+  color: var(--ok);
 }
 
 .metric-cell.warning {
-  background: rgba(242, 200, 91, 0.09);
-  color: #ffe09b;
+  background: var(--warning-soft);
+  color: var(--warning);
 }
 
 .metric-cell.critical {
-  background: rgba(255, 107, 95, 0.1);
-  color: #ffb0aa;
+  background: var(--critical-soft);
+  color: var(--critical);
 }
 
 .sparkline {
@@ -892,7 +885,7 @@ button {
 }
 
 .sparkline-ok {
-  stroke: var(--primary);
+  stroke: var(--muted-foreground);
 }
 
 .sparkline-critical {
@@ -917,7 +910,7 @@ button {
   transform: translateX(-50%);
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: #07100d;
+  background: var(--background);
   color: var(--foreground);
   padding: 7px 8px;
   font-size: 12px;
